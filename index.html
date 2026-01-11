@@ -2,21 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AutoLeadGrowth – Online Visibility Audit</title>
+  <title>Plumbing Visibility Check – AutoLeadGrowth</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root {
       --bg: #020617;
-      --bg-soft: #0b1220;
       --card: #ffffff;
       --accent: #2563eb;
       --accent-soft: #dbeafe;
-      --accent-dark: #1d4ed8;
-      --danger: #ef4444;
-      --success: #22c55e;
-      --border: #e5e7eb;
       --text-main: #111827;
       --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --danger: #ef4444;
+      --success: #16a34a;
     }
 
     * {
@@ -28,16 +26,16 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
       background: radial-gradient(circle at top, #111827, #020617);
-      color: #e5e7eb;
+      color: #f9fafb;
     }
 
     header {
-      max-width: 1100px;
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 16px 20px 4px;
+      padding: 16px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
@@ -45,20 +43,19 @@
       align-items: center;
       gap: 8px;
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       font-size: 14px;
     }
 
     .logo-mark {
-      width: 28px;
-      height: 28px;
+      width: 26px;
+      height: 26px;
       border-radius: 999px;
       background: linear-gradient(135deg, #22c55e, #2563eb);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
-      color: #0b1120;
+      font-size: 14px;
     }
 
     .pill {
@@ -69,105 +66,83 @@
       color: #cbd5f5;
     }
 
-    .main {
-      max-width: 1100px;
+    .hero {
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 16px 20px 28px;
+      padding: 10px 20px 30px;
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
       gap: 22px;
+      align-items: flex-start;
     }
 
-    @media (max-width: 900px) {
-      .main {
+    @media (max-width: 880px) {
+      .hero {
         grid-template-columns: 1fr;
       }
     }
 
-    h1 {
-      font-size: 30px;
-      margin: 0 0 8px;
+    .hero-left h1 {
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 10px;
     }
 
-    .subtitle {
+    .hero-left p {
       font-size: 14px;
       color: #9ca3af;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .highlight-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .highlight-pill {
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(37, 99, 235, 0.15);
-      border: 1px solid rgba(37, 99, 235, 0.3);
-      color: #dbeafe;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .highlight-pill span {
-      font-size: 13px;
-    }
-
-    .hero-note {
-      font-size: 12px;
-      color: #cbd5f5;
-      margin-top: 4px;
-    }
-
-    .proof-row {
-      display: flex;
-      flex-wrap: wrap;
       gap: 10px;
-      margin-top: 18px;
-      font-size: 11px;
-      color: #9ca3af;
+      margin-bottom: 14px;
     }
 
-    .proof-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .proof-dot {
-      width: 18px;
-      height: 18px;
+    .badge {
+      padding: 5px 10px;
       border-radius: 999px;
-      background: rgba(34, 197, 94, 0.12);
-      border: 1px solid rgba(34, 197, 94, 0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-size: 11px;
-      color: #bbf7d0;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .points {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13px;
+      color: #e5e7eb;
+    }
+
+    .points li {
+      margin-bottom: 6px;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-top: 8px;
     }
 
     .card {
       background: #f9fafb;
+      color: var(--text-main);
       border-radius: 18px;
       padding: 18px 18px 16px;
-      color: var(--text-main);
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
     }
 
     .card h2 {
-      margin: 0 0 6px;
-      font-size: 17px;
+      margin: 0 0 4px;
+      font-size: 18px;
     }
 
     .card p {
-      margin: 0 0 10px;
+      margin: 0 0 14px;
       font-size: 13px;
       color: var(--text-muted);
     }
@@ -186,22 +161,22 @@
       gap: 10px;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 600px) {
       .grid-2 {
         grid-template-columns: 1fr;
       }
     }
 
     .field {
-      margin-bottom: 9px;
+      margin-bottom: 10px;
     }
 
     label {
-      display: block;
       font-size: 12px;
       font-weight: 500;
       color: #374151;
       margin-bottom: 4px;
+      display: block;
     }
 
     input,
@@ -210,37 +185,21 @@
       padding: 8px 10px;
       border-radius: 8px;
       border: 1px solid var(--border);
-      background: #ffffff;
       font-size: 13px;
       outline: none;
+      background: #ffffff;
     }
 
     input:focus,
     select:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.16);
     }
 
-    .radio-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .radio-pill {
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid #d1d5db;
+    .hint {
       font-size: 11px;
-      cursor: pointer;
-      background: #ffffff;
-    }
-
-    .radio-pill.selected {
-      border-color: var(--accent);
-      background: var(--accent-soft);
-      color: #1d4ed8;
-      font-weight: 600;
+      color: #9ca3af;
+      margin-top: 2px;
     }
 
     .btn-primary {
@@ -248,184 +207,51 @@
       padding: 10px 14px;
       border-radius: 999px;
       border: none;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 600;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
       color: #ffffff;
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     .btn-primary:hover {
-      filter: brightness(1.05);
-    }
-
-    .btn-ghost {
-      width: 100%;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid #d1d5db;
-      background: #ffffff;
-      cursor: pointer;
-      font-size: 12px;
-      font-weight: 500;
-      color: #374151;
-      margin-top: 6px;
+      filter: brightness(1.04);
     }
 
     .disclaimer {
-      margin-top: 6px;
-      font-size: 10px;
+      font-size: 11px;
       color: #9ca3af;
+      margin-top: 6px;
     }
 
-    .results {
-      max-width: 1100px;
-      margin: 0 auto 30px;
-      padding: 0 20px 24px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
-      gap: 22px;
-    }
-
-    @media (max-width: 900px) {
-      .results {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .hidden {
+    .success-box {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 12px;
+      background: #ecfdf3;
+      border: 1px solid #bbf7d0;
+      color: #14532d;
+      font-size: 12px;
       display: none;
     }
 
-    .score-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
-
-    .score-circle {
-      width: 84px;
-      height: 84px;
-      border-radius: 999px;
-      border: 5px solid var(--accent-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      background: #ffffff;
-    }
-
-    .score-circle span {
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .score-circle small {
-      position: absolute;
-      bottom: 8px;
-      font-size: 10px;
-      text-transform: uppercase;
-      color: #6b7280;
-    }
-
-    .score-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    .score-sub {
-      font-size: 12px;
-      color: #6b7280;
-    }
-
-    .score-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
-
-    .score-tag {
-      padding: 3px 8px;
-      border-radius: 999px;
-      font-size: 10px;
-      background: #e5e7eb;
-      color: #374151;
-    }
-
-    .money-box {
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 12px;
-      background: #fef3c7;
-      border: 1px solid #fde68a;
-      font-size: 12px;
-      color: #92400e;
-    }
-
-    .money-box strong {
-      font-size: 14px;
-    }
-
-    .list {
-      margin: 10px 0;
-      padding-left: 18px;
-      font-size: 12px;
-      color: #4b5563;
-    }
-
-    .list li {
-      margin-bottom: 4px;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .cta-secondary {
-      flex: 1;
-      min-width: 140px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid #d1d5db;
-      font-size: 12px;
-      cursor: pointer;
-      background: #ffffff;
-      color: #111827;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-    }
-
-    .summary-box {
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 12px;
-      background: #111827;
-      border: 1px solid #4b5563;
-      color: #e5e7eb;
-      font-size: 12px;
-      max-height: 220px;
-      overflow: auto;
-      white-space: pre-wrap;
+    .error {
+      font-size: 11px;
+      color: var(--danger);
+      margin-top: 4px;
+      display: none;
     }
 
     footer {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 8px 20px 18px;
       text-align: center;
-      padding: 8px 10px 18px;
       font-size: 11px;
       color: #6b7280;
     }
@@ -435,562 +261,180 @@
   <header>
     <div class="logo">
       <div class="logo-mark">A</div>
-      AUTOLEADGROWTH
+      AutoLeadGrowth
     </div>
-    <div class="pill">Free Online Visibility Audit • Limited Spots</div>
+    <div class="pill">For Plumbers & Home Service Businesses</div>
   </header>
 
-  <main class="main">
-    <!-- LEFT SIDE: Marketing Copy -->
-    <section>
-      <h1>Is Your Business Invisible Online When Buyers Are Searching?</h1>
-      <p class="subtitle">
-        Run a 2-minute visibility check and see how many leads & sales you’re
-        probably missing every month – then get a clear, done-for-you plan to fix it.
+  <main class="hero">
+    <!-- LEFT: PROMISE -->
+    <section class="hero-left">
+      <h1>Free 10-Minute Online Visibility Check for Your Plumbing Business</h1>
+      <p>
+        Tell us a few basics and we’ll look at how easily customers can find you
+        on Google, maps, and your website – then show you a simple plan to get
+        more calls and booked jobs.
       </p>
 
       <div class="highlight-row">
-        <div class="highlight-pill"><span>⚡</span> No tech skills needed</div>
-        <div class="highlight-pill"><span>📞</span> Consultation included</div>
-        <div class="highlight-pill"><span>💳</span> Ready to buy? Get a quote instantly</div>
+        <div class="badge">✔ No technical jargon</div>
+        <div class="badge">✔ Focused on calls & jobs</div>
+        <div class="badge">✔ 1:1 consultation, not a spammy report</div>
       </div>
 
-      <p class="hero-note">
-        Use this if you’re serious about getting more calls, messages and paying
-        customers from Google, your website and social media – without guessing.
+      <ul class="points">
+        <li>We check how you show up when someone searches “plumber near me”.</li>
+        <li>We look at your website and see if it makes people call you or click away.</li>
+        <li>We review your Google & reviews to see how you compare in your area.</li>
+      </ul>
+
+      <p class="note">
+        You’ll get a short, plain-English breakdown and a clear offer: what we
+        can fix for you and what it costs – so you can decide fast.
       </p>
-
-      <div class="proof-row">
-        <div class="proof-item">
-          <div class="proof-dot">★</div> Built for local & service businesses
-        </div>
-        <div class="proof-item">
-          <div class="proof-dot">✓</div> Great for plumbers, home services, clinics & more
-        </div>
-        <div class="proof-item">
-          <div class="proof-dot">→</div> Next step after this: pick a plan or book a call
-        </div>
-      </div>
     </section>
 
-    <!-- RIGHT SIDE: Audit Tool -->
+    <!-- RIGHT: FORM -->
     <section class="card">
-      <div class="section-label">Step 1 • Tell us about your business</div>
-      <h2>Get Your Free Online Visibility Score</h2>
-      <p>
-        Answer a few quick questions and get a simple score, revenue estimate
-        and a recommended action plan. Your details are used only to send your
-        audit and follow-up options.
+      <div class="section-label">Start Here</div>
+      <h2>Get Your Free Visibility Check</h2>
+      <p>Simple form. No pressure. We’ll text or email you with next steps.</p>
+
+      <div class="grid-2">
+        <div class="field">
+          <label for="ownerName">Your Name</label>
+          <input id="ownerName" placeholder="e.g. John" />
+        </div>
+        <div class="field">
+          <label for="bizName">Business Name</label>
+          <input id="bizName" placeholder="e.g. Phoenix Pipe Pros" />
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="field">
+          <label for="city">City / Service Area</label>
+          <input id="city" placeholder="e.g. Phoenix, AZ" />
+        </div>
+        <div class="field">
+          <label for="phone">Best Phone Number</label>
+          <input id="phone" placeholder="e.g. (555) 123-4567" />
+          <div class="hint">We may text you to confirm a time.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">Best Email</label>
+        <input id="email" placeholder="you@example.com" />
+      </div>
+
+      <div class="field">
+        <label for="website">Website (if you have one)</label>
+        <input id="website" placeholder="https://yourplumbingwebsite.com" />
+      </div>
+
+      <div class="field">
+        <label for="priority">What do you want most right now?</label>
+        <select id="priority">
+          <option value="more-calls">More calls & emergency jobs</option>
+          <option value="more-reviews">More 5-star reviews & trust</option>
+          <option value="better-google">Higher on Google / Maps</option>
+          <option value="better-website">A website that actually makes people call</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="timeline">How soon do you want to improve this?</label>
+        <select id="timeline">
+          <option value="now">Right now – I'm ready to move</option>
+          <option value="30days">Within the next 30 days</option>
+          <option value="just-looking">Just looking / curious</option>
+        </select>
+      </div>
+
+      <div id="errorBox" class="error">
+        Please fill in your name, business, phone, and email so we can contact you.
+      </div>
+
+      <button class="btn-primary" onclick="submitLead()">
+        🚀 Get My Free Visibility Check
+      </button>
+
+      <p class="disclaimer">
+        No spam. No long “strategy course”. Just a quick look at your online
+        presence and a clear option to have us fix it for you.
       </p>
 
-      <form id="auditForm">
-        <div class="grid-2">
-          <div class="field">
-            <label>Business Name *</label>
-            <input id="bizName" required placeholder="e.g. Phoenix Pipe Pros" />
-          </div>
-          <div class="field">
-            <label>Your First Name *</label>
-            <input id="contactName" required placeholder="e.g. Sarah" />
-          </div>
-        </div>
-
-        <div class="grid-2">
-          <div class="field">
-            <label>Business Email *</label>
-            <input id="email" type="email" required placeholder="name@business.com" />
-          </div>
-          <div class="field">
-            <label>Mobile / WhatsApp *</label>
-            <input id="phone" required placeholder="+1 555 123 4567" />
-          </div>
-        </div>
-
-        <div class="grid-2">
-          <div class="field">
-            <label>Website URL</label>
-            <input id="website" placeholder="https://yourbusiness.com" />
-          </div>
-          <div class="field">
-            <label>City / Region</label>
-            <input id="city" placeholder="e.g. Phoenix, AZ" />
-          </div>
-        </div>
-
-        <div class="field">
-          <label>What type of business is this?</label>
-          <select id="industry">
-            <option value="plumber">Plumbing / Home Services</option>
-            <option value="contractor">Contractor / Trades</option>
-            <option value="health">Health / Clinic / Therapy</option>
-            <option value="professional">Professional Services</option>
-            <option value="local">Local Retail / Restaurant</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <div class="grid-2">
-          <div class="field">
-            <label>How many leads per month do you get online right now?</label>
-            <select id="leadsNow">
-              <option value="0">Almost none</option>
-              <option value="1">1–10</option>
-              <option value="2">11–30</option>
-              <option value="3">31–60</option>
-              <option value="4">60+</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>How many more leads per month would you like?</label>
-            <select id="leadsGoal">
-              <option value="1">1–10 extra</option>
-              <option value="2">11–30 extra</option>
-              <option value="3">31–60 extra</option>
-              <option value="4">60+ extra</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="field">
-          <label>Biggest frustration with your online presence?</label>
-          <select id="frustration">
-            <option value="no_vis">People can’t find us on Google</option>
-            <option value="no_calls">We get clicks but not enough calls</option>
-            <option value="no_trust">We don’t have enough reviews / proof</option>
-            <option value="no_content">We are not consistent with social media</option>
-            <option value="no_system">There is no system to follow up with leads</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label>What are you most interested in right now?</label>
-          <div class="radio-row" id="interestRow">
-            <div class="radio-pill" data-value="consult">Free consultation only</div>
-            <div class="radio-pill" data-value="done_for_you">Done-for-you service</div>
-            <div class="radio-pill" data-value="both">I want both options</div>
-          </div>
-        </div>
-
-        <button type="submit" class="btn-primary">
-          ⚡ Show My Score & Action Plan
-        </button>
-        <button type="button" class="btn-ghost" onclick="resetForm()">
-          Reset form
-        </button>
-
-        <div class="disclaimer">
-          By submitting, you agree we may contact you by email, SMS or WhatsApp
-          about your audit and relevant services. No spam. You can opt out anytime.
-        </div>
-      </form>
+      <div id="successBox" class="success-box">
+        Thank you – we’ve received your request. We’ll review your online
+        visibility and reach out shortly by phone or email with a simple breakdown
+        and recommended next steps.
+      </div>
     </section>
   </main>
 
-  <!-- RESULTS SECTION -->
-  <section id="resultsSection" class="results hidden">
-    <div class="card">
-      <div class="section-label">Step 2 • Your audit snapshot</div>
-      <div class="score-row">
-        <div class="score-circle">
-          <span id="scoreValue">0</span>
-          <small>Visibility</small>
-        </div>
-        <div>
-          <div class="score-title" id="scoreTitle">We’ve scanned your answers.</div>
-          <div class="score-sub" id="scoreSub">
-            Based on what you shared, here’s how your online visibility looks at
-            first glance.
-          </div>
-          <div class="score-tags" id="scoreTags"></div>
-        </div>
-      </div>
-
-      <div class="money-box" id="moneyBox">
-        <strong>Estimated opportunity:</strong> –
-      </div>
-
-      <ul class="list" id="actionList"></ul>
-
-      <div class="cta-row">
-        <button class="btn-primary" type="button" onclick="goToConsultation()">
-          📅 Book My Free 20-Minute Visibility Consultation
-        </button>
-        <button class="cta-secondary" type="button" onclick="goToDirectBuy()">
-          💳 I’m Ready – Show Me Service Packages
-        </button>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="section-label">Step 3 • Copy-ready summary</div>
-      <h2>What we’ll cover in your consultation</h2>
-      <p>
-        This is a summary of your situation that you can keep for your own
-        planning. We’ll use this as a starting point on the call.
-      </p>
-
-      <div class="summary-box" id="summaryBox">
-        Fill the form and generate your audit to see your summary here…
-      </div>
-    </div>
-  </section>
-
   <footer>
-    © <span id="yearSpan"></span> AutoLeadGrowth. Use this audit only for businesses
-    you genuinely intend to help.
+    © <span id="year"></span> AutoLeadGrowth – Built for local service
+    businesses who want more calls, not more tech headaches.
   </footer>
 
   <script>
-    // Set current year
-    document.getElementById("yearSpan").textContent = new Date().getFullYear();
+    // Set year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Interest pill selection
-    const interestRow = document.getElementById("interestRow");
-    let selectedInterest = "both";
-
-    interestRow.addEventListener("click", (e) => {
-      const pill = e.target.closest(".radio-pill");
-      if (!pill) return;
-      Array.from(interestRow.children).forEach((el) =>
-        el.classList.remove("selected")
-      );
-      pill.classList.add("selected");
-      selectedInterest = pill.getAttribute("data-value");
-    });
-
-    // Select default interest
-    interestRow.querySelector('[data-value="both"]').classList.add("selected");
-
-    const form = document.getElementById("auditForm");
-    const resultsSection = document.getElementById("resultsSection");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      generateAudit();
-    });
-
-    function generateAudit() {
-      const bizName =
-        document.getElementById("bizName").value.trim() || "your business";
-      const contactName =
-        document.getElementById("contactName").value.trim() || "there";
-      const email = document.getElementById("email").value.trim();
+    function submitLead() {
+      const ownerName = document.getElementById("ownerName").value.trim();
+      const bizName = document.getElementById("bizName").value.trim();
+      const city = document.getElementById("city").value.trim();
       const phone = document.getElementById("phone").value.trim();
-      const website =
-        document.getElementById("website").value.trim() || "Not provided";
-      const city =
-        document.getElementById("city").value.trim() || "your local area";
-      const industry = document.getElementById("industry").value;
-      const leadsNow = parseInt(
-        document.getElementById("leadsNow").value,
-        10
-      );
-      const leadsGoal = parseInt(
-        document.getElementById("leadsGoal").value,
-        10
-      );
-      const frustration = document.getElementById("frustration").value;
+      const email = document.getElementById("email").value.trim();
+      const website = document.getElementById("website").value.trim();
+      const priority = document.getElementById("priority").value;
+      const timeline = document.getElementById("timeline").value;
 
-      // Basic validation for contact fields
-      if (!email || !phone) {
-        alert("Please add both email and mobile/WhatsApp so we can send your audit.");
+      const errorBox = document.getElementById("errorBox");
+      const successBox = document.getElementById("successBox");
+
+      // Simple validation: key fields required
+      if (!ownerName || !bizName || !phone || !email) {
+        errorBox.style.display = "block";
+        successBox.style.display = "none";
         return;
-      }
-
-      // Simple scoring logic
-      let baseScore = 50;
-
-      // If they get almost no leads, score is lower
-      if (leadsNow === 0) baseScore -= 20;
-      else if (leadsNow === 1) baseScore -= 10;
-      else if (leadsNow === 2) baseScore += 0;
-      else if (leadsNow === 3) baseScore += 8;
-      else if (leadsNow === 4) baseScore += 14;
-
-      // Ambitious goals = more opportunity, but current score may be lower
-      if (leadsGoal >= 3) baseScore -= 5;
-
-      // Adjust based on frustration
-      if (frustration === "no_vis") baseScore -= 10;
-      if (frustration === "no_calls") baseScore -= 8;
-      if (frustration === "no_trust") baseScore -= 6;
-      if (frustration === "no_content") baseScore -= 4;
-      if (frustration === "no_system") baseScore -= 6;
-
-      // Clamp between 5 and 95
-      let score = Math.max(5, Math.min(95, baseScore));
-
-      // Estimate opportunity (very rough, but emotionally strong)
-      const avgTicketByIndustry = {
-        plumber: 350,
-        contractor: 800,
-        health: 150,
-        professional: 500,
-        local: 70,
-        other: 250,
-      };
-      const avgTicket = avgTicketByIndustry[industry] || 250;
-
-      const extraLeadsEstimate =
-        leadsGoal === 1
-          ? 5
-          : leadsGoal === 2
-          ? 15
-          : leadsGoal === 3
-          ? 35
-          : 60;
-      const closeRate = 0.35;
-      const extraClients = Math.round(extraLeadsEstimate * closeRate);
-      const extraRevenue = extraClients * avgTicket;
-
-      // Update UI
-      resultsSection.classList.remove("hidden");
-      document.getElementById("scoreValue").textContent = score;
-
-      const scoreTitle = document.getElementById("scoreTitle");
-      const scoreSub = document.getElementById("scoreSub");
-      const scoreTags = document.getElementById("scoreTags");
-      const moneyBox = document.getElementById("moneyBox");
-      const actionList = document.getElementById("actionList");
-      const summaryBox = document.getElementById("summaryBox");
-
-      // Score message
-      if (score < 40) {
-        scoreTitle.textContent = "Your online visibility is currently holding you back.";
-        scoreSub.textContent =
-          "Right now, it’s likely that buyers in " +
-          city +
-          " are finding competitors before they find you. The good news: this is fixable.";
-      } else if (score < 70) {
-        scoreTitle.textContent = "You have a foundation, but you’re leaving money on the table.";
-        scoreSub.textContent =
-          "You’re getting some visibility, but there are clear opportunities to turn more clicks into actual leads and paying customers.";
       } else {
-        scoreTitle.textContent = "You’re ahead of many, but still not maximising potential.";
-        scoreSub.textContent =
-          "Your online presence is better than average, but there are still smart tweaks we can make for consistent inbound growth.";
+        errorBox.style.display = "none";
       }
 
-      // Tags
-      scoreTags.innerHTML = "";
-      const issues = [];
+      // 👉 At this point you can:
+      // 1) Send the data to your GHL webhook / form endpoint
+      // 2) Or redirect to a GHL thank-you / calendar page
 
-      // Build tags & issues from frustration + leads
-      if (frustration === "no_vis") {
-        addTag(scoreTags, "Low Google/JBP visibility");
-        issues.push(
-          "You’re likely not showing up enough when people in " +
-            city +
-            " search for your service on Google Maps and ‘near me’ results."
-        );
-      }
-      if (frustration === "no_calls") {
-        addTag(scoreTags, "Clicks not turning into calls");
-        issues.push(
-          "Your website or landing pages might not be convincing people to call or message you once they’ve clicked."
-        );
-      }
-      if (frustration === "no_trust") {
-        addTag(scoreTags, "Not enough proof/reviews");
-        issues.push(
-          "Reviews and testimonials are probably not strong enough to make you the obvious choice compared to competitors."
-        );
-      }
-      if (frustration === "no_content") {
-        addTag(scoreTags, "Weak social/content presence");
-        issues.push(
-          "Potential customers don’t see enough recent, relevant content that proves you’re active and trustworthy."
-        );
-      }
-      if (frustration === "no_system") {
-        addTag(scoreTags, "No lead follow-up system");
-        issues.push(
-          "Leads can get lost or forgotten because there is no automated follow-up system via SMS, email or WhatsApp."
-        );
-      }
+      // Example: log to console for now (for debugging)
+      console.log("New lead:", {
+        ownerName,
+        bizName,
+        city,
+        phone,
+        email,
+        website,
+        priority,
+        timeline,
+      });
 
-      if (leadsNow === 0 || leadsNow === 1) {
-        addTag(scoreTags, "Severely under-utilised online channels");
-        issues.push(
-          "You’re likely not using your website, Google Business Profile and social media as a real lead-generation engine yet."
-        );
-      }
+      // TODO: Replace this with your GHL URL once your funnel/calendar is ready:
+      // window.location.href = "https://your-ghl-funnel-or-calendar-link.com";
 
-      moneyBox.innerHTML =
-        "<strong>Estimated opportunity:</strong> With a realistic extra " +
-        extraLeadsEstimate +
-        " leads per month and a typical close rate, that’s around <strong>" +
-        extraClients +
-        " new clients/month</strong>, or roughly <strong>$" +
-        extraRevenue.toLocaleString() +
-        "</strong> in extra revenue every month once your visibility & funnel are fixed.";
+      // For now just show success state
+      successBox.style.display = "block";
 
-      // Action list (what you will do for them)
-      actionList.innerHTML = "";
-      actionList.appendChild(
-        makeLi(
-          "Fix your ‘first impression’ online so that when people Google you or click your link, they immediately understand what you do and how to contact you."
-        )
-      );
-      actionList.appendChild(
-        makeLi(
-          "Build or optimize your Google Business Profile and key listings so you show up more often in local ‘near me’ searches in " +
-            city +
-            "."
-        )
-      );
-      actionList.appendChild(
-        makeLi(
-          "Create or clean up a simple content and review plan so your business looks active, trusted and like the safe choice."
-        )
-      );
-      actionList.appendChild(
-        makeLi(
-          "Set up a basic follow-up system (SMS/WhatsApp + email) so that every lead is followed up without you manually chasing them."
-        )
-      );
-
-      // Summary text
-      const interestText =
-        selectedInterest === "consult"
-          ? "You’re currently interested in a free consultation only."
-          : selectedInterest === "done_for_you"
-          ? "You’re interested in a done-for-you solution."
-          : "You’re open to both a consultation and a done-for-you package.";
-
-      const summary =
-        "Hi " +
-        contactName +
-        ",\n\n" +
-        "Here’s a quick summary of your online visibility situation for " +
-        bizName +
-        " in " +
-        city +
-        " based on what you shared:\n\n" +
-        "• Current online visibility score: " +
-        score +
-        "/100\n" +
-        "• Website: " +
-        website +
-        "\n" +
-        "• Current lead flow from online: " +
-        describeLeads(leadsNow) +
-        "\n" +
-        "• Desired extra leads per month: " +
-        describeLeadGoal(leadsGoal) +
-        "\n" +
-        "• Main frustration: " +
-        describeFrustration(frustration) +
-        "\n\n" +
-        "Realistic opportunity estimate:\n" +
-        "If we can help you get around " +
-        extraLeadsEstimate +
-        " extra leads per month and you close about " +
-        Math.round(closeRate * 100) +
-        "%, that’s roughly " +
-        extraClients +
-        " new clients every month.\n" +
-        "With an average client value of about $" +
-        avgTicket +
-        ", that’s ~$" +
-        extraRevenue.toLocaleString() +
-        " in monthly revenue that is currently being left on the table.\n\n" +
-        "Our next step:\n" +
-        "On a short call we can walk through:\n" +
-        "1) What’s blocking your visibility today\n" +
-        "2) Which quick wins we’d implement first\n" +
-        "3) A simple, done-for-you plan to increase your leads without you doing the tech work.\n\n" +
-        interestText +
-        "\n\n" +
-        "We’ll reach out using the email/phone you provided (" +
-        email +
-        " / " +
-        phone +
-        ") to share available times and, if you prefer, a direct service package you can start with.\n\n" +
-        "– AutoLeadGrowth\n";
-
-      summaryBox.textContent = summary;
-      window.scrollTo({ top: resultsSection.offsetTop - 10, behavior: "smooth" });
-    }
-
-    function addTag(container, text) {
-      const tag = document.createElement("div");
-      tag.className = "score-tag";
-      tag.textContent = text;
-      container.appendChild(tag);
-    }
-
-    function makeLi(text) {
-      const li = document.createElement("li");
-      li.textContent = text;
-      return li;
-    }
-
-    function describeLeads(val) {
-      if (val === 0) return "almost no consistent online leads yet";
-      if (val === 1) return "a small but irregular trickle of leads";
-      if (val === 2) return "a decent number of leads, but not predictable";
-      if (val === 3) return "a solid lead flow that can still be improved";
-      return "a strong lead flow that might benefit from better filtering and automation";
-    }
-
-    function describeLeadGoal(val) {
-      if (val === 1) return "1–10 extra leads/month";
-      if (val === 2) return "11–30 extra leads/month";
-      if (val === 3) return "31–60 extra leads/month";
-      return "60+ extra leads/month";
-    }
-
-    function describeFrustration(val) {
-      switch (val) {
-        case "no_vis":
-          return "people not finding you on Google or maps enough";
-        case "no_calls":
-          return "clicks or visitors not turning into calls";
-        case "no_trust":
-          return "not having enough reviews or visible proof";
-        case "no_content":
-          return "inconsistent or weak content/social presence";
-        case "no_system":
-          return "not having a proper system to follow up with leads";
-        default:
-          return "general online visibility challenges";
-      }
-    }
-
-    function resetForm() {
-      form.reset();
-      selectedInterest = "both";
-      Array.from(interestRow.children).forEach((el) =>
-        el.classList.remove("selected")
-      );
-      interestRow.querySelector('[data-value="both"]').classList.add("selected");
-      resultsSection.classList.add("hidden");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    function goToConsultation() {
-      // 🔗 Replace this with your real GHL calendar/funnel URL
-      const consultUrl = "https://your-ghl-calendar-link.com";
-      if (consultUrl.includes("your-ghl")) {
-        alert(
-          "Replace the 'consultUrl' variable in goToConsultation() with your actual GHL calendar or consultation funnel URL."
-        );
-        return;
-      }
-      window.location.href = consultUrl;
-    }
-
-    function goToDirectBuy() {
-      // 🔗 Replace this with your real GHL service sales/checkout funnel URL
-      const directBuyUrl = "https://your-ghl-service-funnel.com";
-      if (directBuyUrl.includes("your-ghl")) {
-        alert(
-          "Replace the 'directBuyUrl' variable in goToDirectBuy() with your actual GHL sales/checkout funnel URL."
-        );
-        return;
-      }
-      window.location.href = directBuyUrl;
+      // Optionally clear form
+      // document.getElementById("ownerName").value = "";
+      // document.getElementById("bizName").value = "";
+      // document.getElementById("city").value = "";
+      // document.getElementById("phone").value = "";
+      // document.getElementById("email").value = "";
+      // document.getElementById("website").value = "";
+      // document.getElementById("priority").value = "more-calls";
+      // document.getElementById("timeline").value = "now";
     }
   </script>
 </body>
