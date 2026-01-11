@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoLeadGrowth – Business Lead Finder</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f8fa;
+        }
+
+        header {
+            background: #0a0f29;
+            padding: 20px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+        }
+
+        .title {
+            font-size: 26px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .description {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input, select {
+            flex: 1;
+            padding: 12px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: #0066ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #004ed1;
+        }
+
+        .loading {
+            text-align: center;
+            display: none;
+            color: #444;
+            margin-top: 20px;
+        }
+
+        .results {
+            margin-top: 30px;
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        th {
+            background: #f1f1f1;
+        }
+
+        .cta {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .cta button {
+            background: #00b359;
+        }
+
+        .cta button:hover {
+            background: #00994d;
+        }
+    </style>
+</head>
+<body>
+
+<header>AutoLeadGrowth</header>
+
+<div class="container">
+    <div class="title">Find Local Business Leads</div>
+    <div class="description">Search businesses by niche + city to discover opportunities.</div>
+
+    <div class="form-group">
+        <input type="text" id="niche" placeholder="e.g. Plumbers, Dentists, Roofers">
+        <input type="text" id="city" placeholder="e.g. Las Vegas, Miami, Houston">
+        <button onclick="searchLeads()">Search</button>
+    </div>
+
+    <div class="loading" id="loading">🔍 Fetching data...</div>
+
+    <div class="results" id="results">
+        <h3>Preview Results</h3>
+        <table>
+            <tr>
+                <th>Business</th>
+                <th>Website</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Sample Plumbing Co.</td>
+                <td>sampleplumbing.com</td>
+                <td>Outdated Website</td>
+            </tr>
+            <tr>
+                <td>Pipe Pros</td>
+                <td>No Website Found</td>
+                <td>High Opportunity</td>
+            </tr>
+            <tr>
+                <td>FlowMaster Plumbing</td>
+                <td>flowmasterplumb.com</td>
+                <td>Weak Social Media</td>
+            </tr>
+        </table>
+
+        <div class="cta">
+            <p>Full report available — includes website review, visibility score, and contact data.</p>
+            <button onclick="requestReport()">Get Full Report</button>
+        </div>
+    </div>
+</div>
+
+<script>
+function searchLeads() {
+    document.getElementById("loading").style.display = "block";
+    setTimeout(() => {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("results").style.display = "block";
+        window.scrollTo(0, document.body.scrollHeight);
+    }, 1500);
+}
+
+function requestReport() {
+    alert("To unlock full report, integrate your email form or redirect to your funnel.");
+}
+</script>
+
+</body>
+</html>
